@@ -412,7 +412,14 @@
 
                 <textarea name="" id="" cols="30" rows="10" placeholder="message"></textarea>
 
-                <input type="submit" class="btn" value="send" onclick="sendmail(); return false">
+                <input type="submit" class="btn" onclick="myFunction()">
+
+                <script>
+                    function myFunction() {
+                        alert("booking sucessfull!");
+                        alert("details send to your mail.");
+                    }
+                </script>
 
             </form>
 
