@@ -1,15 +1,11 @@
-# Use the official Alpine image from the Docker Hub
-FROM alpine:latest
+# Use an official Nginx image as the base image
+FROM nginx:alpine
 
-# Install dependencies (example: installing curl)
-#RUN apk add --no-cache curl
+# Copy your static website files (HTML, CSS, JS) to the Nginx default location
+COPY . /usr/share/nginx/html
 
-# Set the working directory
-WORKDIR /app
+# Expose port 80
+EXPOSE 80
 
-# Copy local files to the container (optional, if needed)
-COPY . /app
-EXPOSE 8080
-
-# Set the default command to run when the container starts
-CMD ["echo", "Hello, this is an Alpine-based Docker container!"]
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
