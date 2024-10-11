@@ -4,8 +4,8 @@ FROM nginx:alpine
 # Copy your static website files (HTML, CSS, JS) to the Nginx default location
 COPY . /usr/share/nginx/html
 
-# Expose port 80
-EXPOSE 80
+# Expose port 8080
+EXPOSE 8080
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
